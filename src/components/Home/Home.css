@@ -8,12 +8,16 @@
     align-items: center;
 }
 .img{
-    width: 100px;
-    height: 200px;
+    width: 50px;
+    height: 50px;
 }
 .activates {
     display: gi;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+.details-container {
+    background: #d1d1d1;
+    padding: 20px;
 }

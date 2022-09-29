@@ -1,0 +1,10 @@
+.questions-container {
+    padding: 0 50px;
+    margin-top: 50px;
+}
+.question {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 25px 0px;
+}

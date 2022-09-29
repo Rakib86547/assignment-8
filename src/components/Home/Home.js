@@ -28,7 +28,7 @@ const Home = () => {
                         <img className='img' src={logo} alt="" />
                         <h1 className='heading'>One-Mind-Activity-Club</h1>
                     </div>
-
+                    <div><h4>today’s exercise</h4></div>
                     <div className='activates grid grid-cols-3'>
                         {
                             activities.map(activity => <Activities

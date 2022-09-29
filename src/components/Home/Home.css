@@ -1,0 +1,19 @@
+.parent-home-container{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 20px;
+}
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+.img{
+    width: 100px;
+    height: 200px;
+}
+.activates {
+    display: gi;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}

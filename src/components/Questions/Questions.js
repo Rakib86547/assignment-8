@@ -6,7 +6,7 @@ const Questions = () => {
             <div>
                 <div className="question">
                 <h3>How Does React Works?</h3>
-                <p><strong>Ans: </strong> React.js is generally thought of as the view layer in an application. You might have used library like Handlebars, or jQuery in the past. Just as jQuery manipulates UI elements, or Handlebars templates are inserted onto the page, React components change what the user sees.
+                <p>React.js is generally thought of as the view layer in an application. You might have used library like Handlebars, or jQuery in the past. Just as jQuery manipulates UI elements, or Handlebars templates are inserted onto the page, React components change what the user sees.
                 This is literally all there is to React. We want to render this data to the UI, so we pass it to a React component which handles the job of getting the HTML into the page.
                 You might be wondering what the big deal is. On the surface, React appears to be another rendering technology. But it’s much more than that. It can make application development incredibly simple. That’s why it’s become so popular.</p>
                 </div>

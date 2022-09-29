@@ -11,9 +11,9 @@ const Activities = (props) => {
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{name}</h2>
-                    <p>{about}</p>
-                    <p>{age}</p>
-                    <p>{time}</p>
+                    <p>{about.slice(0, 200)}</p>
+                    <p>For Age: <strong>{age}</strong></p>
+                    <p>Time required: <strong>{time}</strong></p>
                     <div className="card-actions">
                         <button className="btn btn-primary">Add to list</button>
                     </div>

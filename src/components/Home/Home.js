@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../../image/logo.png';
 import Activities from '../Activities/Activities';
+import Details from '../Details/Details';
 import './Home.css';
 const Home = () => {
     const [activities, setActivities] = useState([])
@@ -30,7 +31,7 @@ const Home = () => {
             </div>
 
             <div className="details-container">
-                <h1>this is details</h1>
+                <Details></Details>
             </div>
         </div>
     );

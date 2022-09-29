@@ -3,6 +3,9 @@
     grid-template-columns: 4fr 1fr;
     gap: 20px;
 }
+.activity-container {
+    margin-left: 50px;
+}
 .logo-section {
     display: flex;
     align-items: center;
@@ -20,4 +23,7 @@
 .details-container {
     background: #d1d1d1;
     padding: 20px;
+}
+.heading{
+    color: crimson;
 }

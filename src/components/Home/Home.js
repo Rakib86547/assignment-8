@@ -5,18 +5,25 @@ import Details from '../Details/Details';
 import './Home.css';
 const Home = () => {
     const [activities, setActivities] = useState([])
+    const [details, setDetail] = useState([])
     useEffect(() => {
         fetch('data.json')
         .then(rest => rest.json())
         .then(data => setActivities(data))
     }, [])
+
+    const handleAddToList = (activities) => {
+        // console.log('click', activities)
+        setDetail([...details, activities]);
+    }
+
     return (
         <div className='parent-home-container'>
             <div className="activity-container">
 
                 <div className="logo-section">
                 <img className='img' src={logo} alt="" />
-                <h1>Antor Feetnes Club</h1>
+                <h1 className='heading'>One-Mind-Activity-Club</h1>
                 </div>
                
                 <div className='activates grid grid-cols-3'>
@@ -24,6 +31,7 @@ const Home = () => {
                     activities.map(activity => <Activities
                     key={activity.id}
                     activity={activity}
+                    handleAddToList={handleAddToList}
                     ></Activities>)
                 }
                 </div>
@@ -31,7 +39,9 @@ const Home = () => {
             </div>
 
             <div className="details-container">
-                <Details></Details>
+                <Details
+                details={details}
+                ></Details>
             </div>
         </div>
     );

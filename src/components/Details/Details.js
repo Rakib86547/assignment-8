@@ -1,7 +1,12 @@
-import React from 'react';
+
 import antor from '../../image/antor.jpg';
 import './Details.css';
-const Details = () => {
+const Details = (props) => {
+    const {details} = props;
+    let time = 0;
+    for(const detail of details){
+        time = time + detail.time;
+    }
     return (
         <div>
             <div className="about-me">
@@ -29,7 +34,7 @@ const Details = () => {
             </div>
 
             <div className="exercise-details">
-                <h5>Exercise Time: </h5>
+                <h5>Exercise Time: {time} minuts</h5>
                 <h5>Break Time: </h5>
                 <button className='activity-btn'>Activity Complete</button>
             </div>

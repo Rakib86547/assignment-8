@@ -10,7 +10,7 @@ const Activities = (props) => {
                     <img src={picture} alt="Shoes" className="rounded-xl" />
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title">{name}</h2>
+                    <h2>{name}</h2>
                     <p>{about.slice(0, 200)}</p>
                     <p>For Age: <strong>{age}</strong></p>
                     <p>Time required: <strong>{time} minuts</strong></p>

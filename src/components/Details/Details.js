@@ -1,11 +1,24 @@
 
 import antor from '../../image/antor.jpg';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Details.css';
+import { useState } from 'react';
 const Details = (props) => {
     const {details} = props;
+    const [break1, setBreak1] = useState([])
     let time = 0;
     for(const detail of details){
         time = time + detail.time;
+    }
+    let ten = 10;
+    const handleBreakButton1 = (ten) => {
+        console.log('click', ten)
+        setBreak1([...break1, ten])
+    }
+
+    const activeButtonHandle = () => {
+        toast("Complete Your Activity")
     }
     return (
         <div>
@@ -26,7 +39,7 @@ const Details = (props) => {
             <div className="break-section">
                 <h3>Add a Break</h3>
                 <div className="break-btn">
-                    <button>10s</button>
+                    <button onClick={() =>handleBreakButton1(ten)}>{ten}</button>
                     <button>20s</button>
                     <button>30s</button>
                     <button>40s</button>
@@ -35,8 +48,22 @@ const Details = (props) => {
 
             <div className="exercise-details">
                 <h5>Exercise Time: {time} minuts</h5>
-                <h5>Break Time: </h5>
-                <button className='activity-btn'>Activity Complete</button>
+                <h5>Break Time: {ten}</h5>
+                <div>
+                <button className='activity-btn' onClick={activeButtonHandle}>Activity Complete</button>
+                <ToastContainer 
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                />
+                </div>
+                
             </div>
         </div>
     );

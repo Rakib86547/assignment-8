@@ -23,7 +23,7 @@ const Details = (props) => {
         localStorage.setItem('break-time', JSON.stringify([breaks]))
     }
       
-       
+       localStorage.setItem('break-time', JSON.stringify([...breaks], oldDataParse))
    }
     const activeButtonHandle = () => {
         toast("Complete Your Activity")
@@ -47,7 +47,7 @@ const Details = (props) => {
             <div className="break-section">
                 <h3>Add a Break</h3>
                 <div className="break-btn">
-                    <button onClick={(e) =>handleBreakBtn(e.target.value)}>10s</button>
+                    <button onClick={(e) =>handleBreakBtn(e.target.value)}>10min</button>
                     <button>20min</button>
                     <button>30min</button>
                     <button>40min</button>
@@ -56,7 +56,7 @@ const Details = (props) => {
 
             <div className="exercise-details">
                 <h5>Exercise Time: {time} minutes</h5>
-                <h5>Break Time: {breaks} s</h5>
+                <h5>Break Time: {breaks} minutes</h5>
                 <div>
                 <button className='activity-btn' onClick={activeButtonHandle}>Activity Complete</button>
                 <ToastContainer 

@@ -5,18 +5,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import './Details.css';
 import { useState } from 'react';
 const Details = (props) => {
+    const [breaks, setBreaks] = useState(10)
     const {details} = props;
-    const [break1, setBreak1] = useState([])
     let time = 0;
     for(const detail of details){
         time = time + detail.time;
     }
-    let ten = 10;
-    const handleBreakButton1 = (ten) => {
-        console.log('click', ten)
-        setBreak1([...break1, ten])
-    }
-
+   const handleBreakBtn = () => {
+       setBreaks(breaks)
+       console.log('click', breaks)
+   }
     const activeButtonHandle = () => {
         toast("Complete Your Activity")
     }
@@ -39,7 +37,7 @@ const Details = (props) => {
             <div className="break-section">
                 <h3>Add a Break</h3>
                 <div className="break-btn">
-                    <button onClick={() =>handleBreakButton1(ten)}>{ten}</button>
+                    <button onClick={(e) =>handleBreakBtn(e.target.value)}>10s</button>
                     <button>20s</button>
                     <button>30s</button>
                     <button>40s</button>
@@ -47,8 +45,8 @@ const Details = (props) => {
             </div>
 
             <div className="exercise-details">
-                <h5>Exercise Time: {time} minuts</h5>
-                <h5>Break Time: {ten}</h5>
+                <h5>Exercise Time: {time} minutes</h5>
+                <h5>Break Time: {breaks} s</h5>
                 <div>
                 <button className='activity-btn' onClick={activeButtonHandle}>Activity Complete</button>
                 <ToastContainer 

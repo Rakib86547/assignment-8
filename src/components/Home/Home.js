@@ -18,6 +18,7 @@ const Home = () => {
         setDetail([...details, activities]);
     }
 
+
     return (
         <div>
             <div className="parent-home-container">

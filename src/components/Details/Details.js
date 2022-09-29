@@ -12,8 +12,18 @@ const Details = (props) => {
         time = time + detail.time;
     }
    const handleBreakBtn = () => {
-       setBreaks(breaks)
-       console.log('click', breaks)
+    const oldData = localStorage.getItem('break-time')
+    const oldDataParse = JSON.parse(oldData)
+    console.log(oldDataParse)
+    if(oldDataParse){
+        localStorage.setItem('break-time', JSON.stringify([...breaks, oldDataParse]))
+        setBreaks([...breaks], oldDataParse)
+    }
+    else{
+        localStorage.setItem('break-time', JSON.stringify([breaks]))
+    }
+      
+       
    }
     const activeButtonHandle = () => {
         toast("Complete Your Activity")
@@ -38,9 +48,9 @@ const Details = (props) => {
                 <h3>Add a Break</h3>
                 <div className="break-btn">
                     <button onClick={(e) =>handleBreakBtn(e.target.value)}>10s</button>
-                    <button>20s</button>
-                    <button>30s</button>
-                    <button>40s</button>
+                    <button>20min</button>
+                    <button>30min</button>
+                    <button>40min</button>
                 </div>
             </div>
 
